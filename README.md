@@ -1,0 +1,1 @@
+Portfolio feito em React detalhando projetos feitos por mim na Kenzie Academy Brasil dentre outros.

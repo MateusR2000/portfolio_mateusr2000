@@ -1,13 +1,21 @@
 import { StyledHeader } from "./style"
 
+const goTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+
 export const Header = () => {
     return (
         <StyledHeader>
             <h1>Mateus</h1>
             <div className="buttons">
-                <button onClick={(e) => {e.preventDefault, window.location.replace("/#home")}}>Home</button>
-                <button onClick={(e) => {e.preventDefault, window.location.replace("/#projects")}}>Projetos</button>
-                <button onClick={(e) => {e.preventDefault, window.location.replace("/#contacts")}}>Contatos</button>
+                <button onClick={() => goTo("home")}>Home</button>
+                <button onClick={() => goTo("projects")}>Projetos</button>
+                <button onClick={() => goTo("contacts")}>Contatos</button>
             </div>
         </StyledHeader>
     )

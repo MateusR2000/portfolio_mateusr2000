@@ -1,4 +1,6 @@
 import { StyledContacts } from "./style"
+import emailIcon from "../../assets/email.png"
+import linkedinIcon from "../../assets/linkedin.png"
 
 
 export const Contacts = () => {
@@ -10,7 +12,7 @@ export const Contacts = () => {
             </div>
             <div className="contact__cards">
                 <div className="contact__container">
-                    <img src="../../assets/email.png" alt="email"/>
+                    <img src={emailIcon} alt="email"/>
                     <div className="contact__info">
                         <h3>Meu e-mail</h3>
                         <p>Mande um e-mail com sugestões ou ideias</p>
@@ -18,7 +20,7 @@ export const Contacts = () => {
                     </div>
                 </div>
                 <div className="contact__container">
-                    <img src="../../assets/linkedin.png" alt="linkedin"/>
+                    <img src={linkedinIcon} alt="linkedin"/>
                     <div className="contact__info">
                         <h3>Meu Linkedin</h3>
                         <p>Vamos interagir no Linkedin e expandir nosso network.</p>

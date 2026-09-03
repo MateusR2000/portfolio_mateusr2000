@@ -1,4 +1,18 @@
-const projetos = [
+type Projeto = {
+    name: string;
+    languages: string;
+    description: string;
+    githubLink: string;
+    appLink?: string;
+}
+
+const projetos: Projeto[] = [
+    {
+        name: "Projeto Prisma Cars",
+        languages: "Typescript",
+        description: "Projeto de prática de backend com a ORM Prisma, onde foi criado um CRUD de um marketplace de carros com autenticação de usuários e validação de dados.",
+        githubLink: "https://github.com/MateusR2000/prisma-cars"
+    },
     {
         name: "Projeto E-Commerce M1 Kenzie",
         languages: "Javascript",
