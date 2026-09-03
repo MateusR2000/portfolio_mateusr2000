@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../styles/breakpoints";
 
 export const StyledProjects = styled.div`
     background-color: var(--grey-5);
@@ -6,12 +7,13 @@ export const StyledProjects = styled.div`
     flex-direction: column;
     gap: 50px;
     width: 100%;
-    height: 1000px;
+    height: auto;
+    min-height: 600px;
     padding: 90px;
     color: #ffffff;
 
     .projects__intro{
-        height: 75px;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -37,15 +39,17 @@ export const StyledProjects = styled.div`
     ul{
         display: flex;
         max-width: 1030px;
+        flex-wrap: wrap;
+        gap: 40px;
     }
 
     li{
-        height: 100px;
+        height: auto;
         width: 100%;
-        max-height: 225px;
         max-width: 500px;
         display: flex;
         flex-direction: column;
+        flex: 1 1 320px;
         gap: 25px;
     }
     
@@ -73,5 +77,25 @@ export const StyledProjects = styled.div`
         font-size: 1rem;
         color: var(--grey-3);
         font-weight: 400;
+    }
+
+    ${devices.tablet} {
+        padding: 50px 30px;
+        gap: 30px;
+    }
+
+    ${devices.mobile} {
+        padding: 40px 20px;
+        gap: 20px;
+
+        ul {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        li {
+            flex: 1 1 auto;
+            max-width: 100%;
+        }
     }
 `

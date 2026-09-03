@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../styles/breakpoints";
 
 export const StyledHome = styled.div`
     display: flex;
@@ -11,8 +12,16 @@ export const StyledHome = styled.div`
 
     .info {
         display: flex;
+        allign-items: center;
         height: 60px;
         gap: 15px;
+    }
+
+    .info img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
     }
 
     h2{
@@ -32,6 +41,13 @@ export const StyledHome = styled.div`
     .buttons{
         display: flex;
         gap: 20px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .buttons img {
+        height: 28px;
+        width: 28px;
     }
 
     button{
@@ -45,7 +61,39 @@ export const StyledHome = styled.div`
     .techIcons {
         height: 70px;
         display: flex;
+        flex-wrap: wrap;
         gap: 30px;
+    }
+
+    .techIcons img {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+    }
+
+    ${devices.tablet} {
+        padding: 50px 30px;
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+
+    ${devices.mobile} {
+        padding: 30px 20px;
+
+        h2 {
+            font-size: 1.3rem;
+        }
+
+        .buttons{
+            gap: 12px;
+        }
+
+        button {
+            width: 100%;
+            justify-content: center;
+        }
     }
 
 `

@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { devices } from "../../styles/breakpoints";
 
 export const StyledContacts = styled.div`
     color: #ffffff;
     display: flex;
     gap: 100px;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     padding: 90px;
     
@@ -34,19 +36,38 @@ export const StyledContacts = styled.div`
     }
 
     .contact__container{
-        height: 120px;
+        height: auto;
         display: flex;
+        align-items: flex-start;
         gap: 20px;
     }
 
+    .contact__container img{
+        height: 32px;
+        width: 32px;
+    }
     .contact__info{
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 10px;
     }
 
     a{
         font-size: 1rem;
         color: #ffffff;
+    }
+
+    ${devices.tablet} {
+        padding: 50px 30px;
+        gap: 50px; 
+    }
+
+    ${devices.mobile} {
+        padding: 40px 20px;
+        gap: 30px; 
+
+        .contact__cards{
+            gap: 40px;
+        }
     }
 `

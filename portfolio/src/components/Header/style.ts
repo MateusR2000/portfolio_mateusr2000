@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { devices } from "../../styles/breakpoints"
 
 export const StyledHeader = styled.header`
     color: #ffffff;
@@ -32,5 +33,20 @@ export const StyledHeader = styled.header`
 
     button:hover {
         color: #ffffff;
+    }
+
+    ${devices.tablet} {
+        height: auto,
+        flex-direction: column;
+        padding: 10px 0;
+
+        div {
+            gap: 12px;
+            margin-bottom: 0;
+        }
+
+        button {
+            font-size: 0.9rem;
+        }
     }
 `
