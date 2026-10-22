@@ -6,6 +6,7 @@ import cssIcon from "../../assets/css.png"
 import jsIcon from "../../assets/js.png"
 import reactIcon from "../../assets/react.png"
 import pythonIcon from "../../assets/python.png"
+import { useLanguage } from "../../contexts/LanguageContext"
 
 const goTo = (id: string) => {
     const element = document.getElementById(id);
@@ -16,17 +17,18 @@ const goTo = (id: string) => {
 
 
 export const Home = () => {
+    const { t } = useLanguage();
     return (
         <StyledHome id="home">
             <div className="info">
-                <img src={profileImg} alt="Foto de perfil" />
-                <p>E aí? Sou o Mateus</p>
+                <img src={profileImg} alt={t.home.profilePic} />
+                <h1>{t.home.greeting}</h1>
             </div>
-            <h2>Pronto para começar minha <span>carreira!</span></h2>
-            <p className="intro">Descubra o que eu já fiz. Meus projetos, as tecnologias que eu domino e também mais sobre mim.</p>
+            <h2>{t.home.title}</h2>
+            <p className="intro">{t.home.intro}</p>
             <div className="buttons">
-                <button onClick={() => goTo("projects")}>Ver Projetos</button>
-                <a href="https://github.com/MateusR2000"><img src={githubIcon} alt="github"/></a>
+                <button onClick={() => goTo("projects")}>{t.home.viewProjects}</button>
+                <a href="https://github.com/MateusR2000"><img src={githubIcon} alt={t.home.github}/></a>
             </div>
             <div className="techIcons">
                     <img src={htmlIcon} alt="html"/>

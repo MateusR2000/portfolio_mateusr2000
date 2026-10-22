@@ -1,26 +1,29 @@
-import { projetos } from "../../projetos"
+import { projects } from "../../projects"
 import { StyledProjects } from "./style"
+import { useLanguage } from "../../contexts/LanguageContext"
 
 export const Projects = () => {
+    const { t, language } = useLanguage();
+
     return (
         <StyledProjects id="projects">
             <div className="projects__intro">
-                <h2>Meus Projetos</h2>
-                <p className="intro">Projetos criados na <span>Kenzie Academy</span></p>
+                <h2>{t.projects.title}</h2>
+                <p className="intro">{t.projects.description}</p>
             </div>
             <ul>
-                {projetos.map((projeto) => {
+                {projects.map((project) => {
                     return(
-                        <li key={projeto.name}>
-                            <h3>{projeto.name}</h3>
+                        <li key={project.id}>
+                            <h3>{project.name[language]}</h3>
                             <div className="languages__container">
-                                <p>Linguagens:</p>
-                                <p className="languages">{projeto.languages}</p>
+                                <p>{t.projects.languages}</p>
+                                <p className="languages">{project.languages}</p>
                             </div>
-                            <p>{projeto.description}</p>
-                            <div className="links__projeto">
-                                <a href={projeto.githubLink}>Github code</a>
-                                <a href={projeto.appLink}>Aplicação</a>
+                            <p>{project.description[language]}</p>
+                            <div className="links__project">
+                                <a href={project.githubLink}>{t.projects.githubLink}</a>
+                                <a href={project.appLink}>{t.projects.appLink}</a>
                             </div>
                         </li>
                     )

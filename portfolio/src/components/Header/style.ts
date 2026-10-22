@@ -35,6 +35,13 @@ export const StyledHeader = styled.header`
         color: #ffffff;
     }
 
+    .language_switch {
+        border: 1px solid var(--grey-3);
+        border-radius: 6px;
+        padding: 2px 10px;
+        font-size: 0.85rem;
+    }
+
     ${devices.tablet} {
         height: auto,
         flex-direction: column;

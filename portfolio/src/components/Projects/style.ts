@@ -67,7 +67,7 @@ export const StyledProjects = styled.div`
         color: var(--grey-3);
     }
 
-    .links__projeto{
+    .links__project{
         height: 28px;
         display: flex;
         gap: 10px;

@@ -1,30 +1,33 @@
 import { StyledContacts } from "./style"
 import emailIcon from "../../assets/email.png"
 import linkedinIcon from "../../assets/linkedin.png"
+import { useLanguage } from "../../contexts/LanguageContext"
 
 
 export const Contacts = () => {
+    const { t } = useLanguage();
+
     return (
         <StyledContacts id="contacts">
             <div className="contacts__intro">
-                <h2>Fale Comigo</h2>
-                <p>Meus contatos pra gente ter uma conversa</p>
+                <h2>{t.contacts.title}</h2>
+                <p>{t.contacts.intro}</p>
             </div>
             <div className="contact__cards">
                 <div className="contact__container">
                     <img src={emailIcon} alt="email"/>
                     <div className="contact__info">
-                        <h3>Meu e-mail</h3>
-                        <p>Mande um e-mail com sugestões ou ideias</p>
-                        <a href="mailto:x0xmateus@live.com">Mandar email</a>
+                        <h3>{t.contacts.emailTitle}</h3>
+                        <p>{t.contacts.emailText}</p>
+                        <a href="mailto:x0xmateus@live.com">{t.contacts.emailLink}</a>
                     </div>
                 </div>
                 <div className="contact__container">
                     <img src={linkedinIcon} alt="linkedin"/>
                     <div className="contact__info">
-                        <h3>Meu Linkedin</h3>
-                        <p>Vamos interagir no Linkedin e expandir nosso network.</p>
-                        <a href="https://www.linkedin.com/in/mateus-rodrigues-santos-23218225b/">Ir para o meu perfil</a>
+                        <h3>{t.contacts.linkedinTitle}</h3>
+                        <p>{t.contacts.linkedinText}</p>
+                        <a href="https://www.linkedin.com/in/mateus-rodrigues-santos-23218225b/">{t.contacts.linkedinLink}</a>
                     </div>
                 </div>
             </div>
